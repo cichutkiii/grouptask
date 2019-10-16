@@ -1,6 +1,9 @@
+import file_ops
 import stat_var
 
 pick = 0
+file_ops.downloadFile()
+
 while True:
     print(stat_var.menuOptions)
     try:
@@ -9,7 +12,7 @@ while True:
         print("Podana wartość nie jest liczbą")
 
     if pick == 1:
-        pass
+        file_ops.downloadFile()
         # 1. Pobierz plik z internetu
     elif pick == 2:
         pass
