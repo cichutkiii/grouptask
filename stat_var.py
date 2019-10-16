@@ -10,3 +10,6 @@ menuOptions = """
 
 yourChoice = "Twoj wybor "
 withoutChoice = "nie wybrano poprawnej cyfry, wybierz jedną z opcji"
+
+fileAddress = "https://s3.zylowski.net/public/input/2.txt"
+local_file_name = "data.txt"
