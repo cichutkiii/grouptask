@@ -1,5 +1,6 @@
 import os.path
 import stat_var
+import string
 
 
 def check_file_exist():
@@ -24,3 +25,13 @@ def get_count_words():
     with open(stat_var.local_file_name) as dataFile:
         text = dataFile.read()
     return len(text.split())
+
+
+def get_count_punctuation():
+    counter = 0
+    with open(stat_var.local_file_name) as dataFile:
+        text = dataFile.read()
+        for char in text:
+            if char in string.punctuation:
+                counter = counter + 1
+    return counter

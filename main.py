@@ -30,7 +30,11 @@ while True:
             print("brak danych do sprawdzenia")
         # 3. Zlicz liczbę wyrazów w pliku
     elif pick == 4:
-        pass
+        if data_ops.check_file_exist():
+            count_signs = data_ops.get_count_punctuation()
+            print("liczba znakow interpunkcyjnych: ", count_signs)
+        else:
+            print("brak danych do sprawdzenia")
         # 4. Zlicz liczbę znaków interpunkcyjnych w pliku.
     elif pick == 5:
         pass
