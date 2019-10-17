@@ -1,7 +1,5 @@
 import os.path
 import stat_var
-import string
-from collections import Counter
 
 
 def check_file_exist():
@@ -13,10 +11,16 @@ def check_file_exist():
 
 def get_count_letter():
     counter = 0
+    letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     with open(stat_var.local_file_name) as dataFile:
-        letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         text = dataFile.read()
         for char in text:
             if char in letters:
                 counter = counter + 1
     return counter
+
+
+def get_count_words():
+    with open(stat_var.local_file_name) as dataFile:
+        text = dataFile.read()
+    return len(text.split())

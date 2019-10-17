@@ -23,7 +23,11 @@ while True:
             print("brak danych do sprawdzenia")
         # 2. Zlicz liczbę liter w pobranym pliku
     elif pick == 3:
-        pass
+        if data_ops.check_file_exist():
+            count_words = data_ops.get_count_words()
+            print("liczba wyrazow: ", count_words)
+        else:
+            print("brak danych do sprawdzenia")
         # 3. Zlicz liczbę wyrazów w pliku
     elif pick == 4:
         pass
