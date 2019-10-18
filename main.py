@@ -37,7 +37,11 @@ while True:
             print("brak danych do sprawdzenia")
         # 4. Zlicz liczbę znaków interpunkcyjnych w pliku.
     elif pick == 5:
-        pass
+        if data_ops.check_file_exist():
+            count_sentences = data_ops.get_count_sentences()
+            print("liczba zdań: ", count_sentences)
+        else:
+            print("brak danych do sprawdzenia")
         # 5. Zlicz liczbę zdań w pliku
     elif pick == 6:
         pass

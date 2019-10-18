@@ -35,3 +35,9 @@ def get_count_punctuation():
             if char in string.punctuation:
                 counter = counter + 1
     return counter
+
+
+def get_count_sentences():
+    with open(stat_var.local_file_name) as dataFile:
+        text = dataFile.read()
+    return len(text.split("."))
