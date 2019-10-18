@@ -3,7 +3,7 @@ import stat_var
 import data_ops
 
 pick = 0
-file_ops.downloadFile()
+file_ops.download_file()
 
 while True:
     print(stat_var.menuOptions)
@@ -13,7 +13,7 @@ while True:
         print("Podana wartość nie jest liczbą")
 
     if pick == 1:
-        file_ops.downloadFile()
+        file_ops.download_file()
         # 1. Pobierz plik z internetu
     elif pick == 2:
         if data_ops.check_file_exist():
@@ -58,7 +58,7 @@ while True:
             print("brak danych do sprawdzenia")
         # 7. Zapisz statystyki z punktów 2-5 do pliku statystyki.txt
     elif pick == 8:
-
+        file_ops.remove_files()
         # 8. Wyjście z programu
         break
     else:

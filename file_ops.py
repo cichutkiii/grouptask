@@ -1,17 +1,18 @@
 import urllib.request
 import data_ops
 import string
+import os
 
 import stat_var
 
 
-def downloadFile():
+def download_file():
     try:
-        print("Downloading data....")
+        print("Sciaganie pliku....")
         urllib.request.urlretrieve(stat_var.fileAddress, stat_var.local_file_name)
-        print("Done")
+        print("Gotowe")
     except urllib.error.URLError:
-        print("Couldn't download file, check connection")
+        print("nie mozna sciagnac pliku, sprawdz polaczenie")
 
 
 def write_statistics():
@@ -21,3 +22,17 @@ def write_statistics():
     file.write("liczba znakow interpunkcyjnych: " + str(data_ops.get_count_punctuation()) + "\n")
     file.write("liczba zdań: " + str(data_ops.get_count_sentences()) + "\n")
     file.close()
+
+
+def remove_files():
+    if os.path.exists(stat_var.stat_file):
+        os.remove(stat_var.stat_file)
+        print("usunieto plik statystyki")
+
+    else:
+        print("plik statystyki nie istnieje")
+    if os.path.exists(stat_var.local_file_name):
+        os.remove(stat_var.local_file_name)
+        print("usunieto plik z danymi")
+    else:
+        print("plik z danymi nie istnieje")
