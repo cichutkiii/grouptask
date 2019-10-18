@@ -51,3 +51,4 @@ def get_letters_report():
     text_count = {k: text_count.get(k, 0) for k in string.ascii_lowercase}
     for letter in text_count:
         print(letter.upper(), ":", text_count[letter])
+    return text_count

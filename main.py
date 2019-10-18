@@ -51,7 +51,11 @@ while True:
             print("brak danych do sprawdzenia")
         # 6. Wygeneruj raport o użyciu liter (A-Z)
     elif pick == 7:
-        pass
+        if data_ops.check_file_exist():
+            file_ops.write_statistics()
+            print("zapisano dane do pliku statystyki")
+        else:
+            print("brak danych do sprawdzenia")
         # 7. Zapisz statystyki z punktów 2-5 do pliku statystyki.txt
     elif pick == 8:
 
