@@ -1,6 +1,7 @@
 import os.path
 import stat_var
 import string
+from collections import Counter
 
 
 def check_file_exist():
@@ -41,3 +42,12 @@ def get_count_sentences():
     with open(stat_var.local_file_name) as dataFile:
         text = dataFile.read()
     return len(text.split("."))
+
+
+def get_letters_report():
+    with open(stat_var.local_file_name) as dataFile:
+        text = dataFile.read()
+    text_count = Counter(text.translate(str.maketrans('', '', string.punctuation)))
+    text_count = {k: text_count.get(k, 0) for k in string.ascii_lowercase}
+    for letter in text_count:
+        print(letter.upper(), ":", text_count[letter])

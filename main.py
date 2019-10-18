@@ -44,7 +44,11 @@ while True:
             print("brak danych do sprawdzenia")
         # 5. Zlicz liczbę zdań w pliku
     elif pick == 6:
-        pass
+        if data_ops.check_file_exist():
+            data_ops.get_letters_report()
+
+        else:
+            print("brak danych do sprawdzenia")
         # 6. Wygeneruj raport o użyciu liter (A-Z)
     elif pick == 7:
         pass
