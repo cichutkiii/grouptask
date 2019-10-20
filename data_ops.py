@@ -27,6 +27,8 @@ def get_count_letter():
                 counterbcd = counterbcd + 1
     print("liczba samoglosek", counteraei)
     print("liczba spolglosek", counterbcd)
+    result = "liczba samoglosek: " + str(counteraei) + "\nliczba spolglosek: " + str(counterbcd)
+    return result
 
 
 def get_count_words():

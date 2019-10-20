@@ -17,7 +17,7 @@ def download_file():
 
 def write_statistics():
     file = open(stat_var.stat_file, "w+")
-    file.write("liczba liter: " + str(data_ops.get_count_sentences()) + "\n")
+    file.write(data_ops.get_count_letter() + "\n")
     file.write("liczba wyrazow: " + str(data_ops.get_count_words()) + "\n")
     file.write("liczba znakow interpunkcyjnych: " + str(data_ops.get_count_punctuation()) + "\n")
     file.write("liczba zdań: " + str(data_ops.get_count_sentences()) + "\n")
