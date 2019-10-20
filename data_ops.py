@@ -30,9 +30,14 @@ def get_count_letter():
 
 
 def get_count_words():
+    counter = 0
     with open(stat_var.local_file_name) as dataFile:
         text = dataFile.read()
-    return len(text.split())
+        words = text.split()
+        for word in words:
+            if len(word) > 1:
+                counter = counter + 1
+    return counter
 
 
 def get_count_punctuation():
