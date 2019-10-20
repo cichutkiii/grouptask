@@ -45,7 +45,7 @@ def get_count_punctuation():
     with open(stat_var.local_file_name) as dataFile:
         text = dataFile.read()
         for char in text:
-            if char in string.punctuation:
+            if char in ".?":
                 counter = counter + 1
     return counter
 
