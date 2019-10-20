@@ -53,7 +53,8 @@ def get_count_punctuation():
 def get_count_sentences():
     with open(stat_var.local_file_name) as dataFile:
         text = dataFile.read()
-    return len(text.split("."))
+        zdania = (str(len(text.split("."))) + str(len(text.split("?"))))
+    return zdania
 
 
 def get_letters_report():
