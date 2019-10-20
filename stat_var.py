@@ -1,5 +1,5 @@
 menuOptions = """
-1. Pobierz plik z internetu
+1. wybierz plik wejsciowy
 2. Zlicz liczbę liter w pobranym pliku
 3. Zlicz liczbę wyrazów w pliku
 4. Zlicz liczbę znaków interpunkcyjnych w pliku.

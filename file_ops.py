@@ -1,4 +1,7 @@
 import urllib.request
+
+from pip._vendor.distlib.compat import raw_input
+
 import data_ops
 import string
 import os
@@ -7,12 +10,24 @@ import stat_var
 
 
 def download_file():
-    try:
-        print("Sciaganie pliku....")
-        urllib.request.urlretrieve(stat_var.fileAddress, stat_var.local_file_name)
-        print("Gotowe")
-    except urllib.error.URLError:
-        print("nie mozna sciagnac pliku, sprawdz polaczenie")
+
+    question = raw_input("czy pobrac plik z internetu?")
+    if question == "T" :
+        address = raw_input("podaj adres do sciagniecia")
+        try:
+            print("Sciaganie pliku....")
+            urllib.request.urlretrieve(address, stat_var.local_file_name)
+            print("Gotowe")
+            return stat_var.local_file_name
+        except urllib.error.URLError:
+            print("nie mozna sciagnac pliku")
+    elif question == "N":
+        local_file = raw_input("podaj adres nazwe pliku lokalnego")
+        if os.path.exists(local_file):
+            return local_file
+        else:
+            print("brak pliku")
+            return 0
 
 
 def write_statistics():
