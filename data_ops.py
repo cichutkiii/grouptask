@@ -12,14 +12,21 @@ def check_file_exist():
 
 
 def get_count_letter():
-    counter = 0
-    letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    counteraei = 0
+    counterbcd = 0
+    lettersaeiou = "aeiouyAEIOUY"
+    lettersbcd = "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ"
+
     with open(stat_var.local_file_name) as dataFile:
         text = dataFile.read()
         for char in text:
-            if char in letters:
-                counter = counter + 1
-    return counter
+            if char in lettersaeiou:
+                counteraei = counteraei + 1
+        for char in text:
+            if char in lettersbcd:
+                counterbcd = counterbcd + 1
+    print("liczba samoglosek", counteraei)
+    print("liczba spolglosek", counterbcd)
 
 
 def get_count_words():

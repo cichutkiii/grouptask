@@ -15,10 +15,9 @@ while True:
     if pick == 1:
         file_ops.download_file()
         # 1. Pobierz plik z internetu
-    elif pick == 2:
+        elif pick == 2:
         if data_ops.check_file_exist():
-            count_letters = data_ops.get_count_letter()
-            print("liczba liter: ", count_letters)
+            data_ops.get_count_letter()
         else:
             print("brak danych do sprawdzenia")
         # 2. Zlicz liczbę liter w pobranym pliku
